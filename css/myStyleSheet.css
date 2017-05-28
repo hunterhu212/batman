@@ -1,0 +1,430 @@
+/*通配符*/
+*{
+    margin: 0;
+    padding: 0;
+}
+
+/*整个固定的背景图*/
+body{
+    width: 100%;
+    background-image: url("../img/batman-body.jpg");
+    background-repeat: no-repeat;
+    background-position: 50% 0;
+    background-color: black;
+    background-attachment: fixed;
+}
+
+/*中间的大框架*/
+.allmiddlebody{
+    overflow: hidden;
+    width: 799px;
+    margin: auto;
+}
+
+/*中间固定头部*/
+.allheader{
+    box-sizing: border-box;
+    /*overflow: hidden;*/
+    display: block;
+    width: 100%;
+    height: 343px;
+    margin: auto;
+    position: fixed;
+    z-index: 999;
+}
+.allheader-top_img{
+    width: 100%;
+    height: 305px;
+    background: url("../img/batman-header.jpg");
+    background-repeat: no-repeat;
+}
+.allheader-middle_img{
+    width: 100%;
+    height: 38px;
+    background: url("../img/batman-header2.png");
+    background-repeat: no-repeat;
+}
+
+/*中间的banner栏*/
+.banner::before{
+    content: '';
+    display: block;
+    width: 804px;
+    height: 343px;
+}
+.banner{
+    box-sizing: border-box;
+    overflow: hidden;
+    width: 100%;
+}
+.banner i{
+    display: block;
+    width: 100%;
+    height: 300px;
+    background: url("../img/batcave-dark.jpg");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    position: relative;
+    z-index: 0;
+}
+.img-batman{
+    margin-left: 180px;
+    position: absolute;
+    z-index: 3;
+    width: 62%;
+    transition: all linear 0.5s;
+}
+.img-kl{
+    position: absolute;
+    z-index: 1;
+    left: 60%;
+    transition: all linear 0.5s;
+}
+.img-joker{
+    position: absolute;
+    z-index: 1;
+    left:22%;
+    top: 28%;
+    transition: all linear 0.5s;
+}
+.img-penny{
+    position: absolute;
+    z-index: 2;
+    transition: all linear 0.5s;
+}
+/*两个阴影角*/
+.img-corner1{
+    top: 420px;
+    position: absolute;
+}
+.img-corner2{
+    z-index: 3;
+    top: 268px;
+    left: 723px;
+    position: relative;
+}
+/*batman动作*/
+.img-batman:hover{
+    transform: translate(0,-20px);
+}
+.img-batman:hover ~.img-kl{
+    transform: translate(20px,0px);
+}
+.img-batman:hover ~.img-joker{
+    transform: translate(-20px,0);
+}
+.img-batman:hover ~.img-penny{
+    transform: translate(-20px,0);
+}
+/*kl的动作*/
+.img-kl:hover{
+    transform: translate(-40px,0);
+}
+/*penny的动作*/
+.img-penny:hover {
+    transform: translate(0,20px);
+}
+.img-penny:hover ~.img-joker{
+    transform: translate(40px,0);
+}
+
+
+/*中间的导航栏*/
+.allnav{
+    box-sizing: border-box;
+    display: block;
+    padding: 5px;
+    width: 100%;
+    height: 124px;
+    overflow: hidden;
+    margin-top: 5px;
+}
+.allnav li{
+    box-sizing: border-box;
+    overflow: hidden;
+    display: block;
+    list-style-type: none;
+    float: left;
+    width: 130px;
+    height: 100px;
+    transition: all 0.4s linear;
+    /*-webkit-transform: rotate(-10deg);*/
+    /*transform: rotate(-10deg);*/
+}
+.allnav li a{
+    box-sizing: border-box;
+    display: block;
+    width: 220px;
+    height: 100px;
+    background: url("../img/menu-button.jpg");
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    transition: margin 0.4s linear;
+}
+.allnav li:nth-child(2) a{
+    background-position: -220px 0;
+}
+.allnav li:nth-child(3) a{
+    background-position: -440px 0;
+}
+.allnav li:nth-child(4) a{
+    background-position: -660px 0;
+}
+.allnav li:nth-child(5) a{
+    background-position: -880px 0;
+}
+.allnav li:nth-child(6) a{
+    background-position: -1100px 0;
+}
+/*第一个banner栏的动作*/
+.allnav li:nth-child(1):hover{
+    width: 220px;
+    box-shadow: 0 0 2px 2px white;
+}
+.allnav li:nth-child(1):hover+li:nth-child(2){
+    width: 90px;
+}
+.allnav li:nth-child(1):hover~li:nth-child(3){
+    width: 100px;
+}
+.allnav li:nth-child(1):hover~li:nth-child(4){
+    width: 110px;
+}
+.allnav li:nth-child(1):hover a{
+    background-position: 0 -100px;
+}
+/*第二个banner栏的动作*/
+.allnav li:nth-child(2):hover{
+    width: 220px;
+    box-shadow: 0 0 2px 2px white;
+}
+.allnav li:nth-child(2):hover+li:nth-child(3){
+    width: 90px;
+}
+.allnav li:nth-child(2):hover~li:nth-child(4){
+    width: 100px;
+}
+.allnav li:nth-child(2):hover~li:nth-child(5){
+    width: 110px;
+}
+.allnav li:nth-child(2):hover a{
+    background-position: -220px -100px;
+}
+/*第三个banner栏的动作*/
+.allnav li:nth-child(3):hover{
+    width: 220px;
+    box-shadow: 0 0 2px 2px white;
+    transform: rotate(-360deg);
+}
+.allnav li:nth-child(3):hover+li:nth-child(4){
+    width: 90px;
+}
+.allnav li:nth-child(3):hover+li:nth-child(4)+li:nth-child(5){
+    width: 100px;
+}
+.allnav li:nth-child(3):hover+li:nth-child(4)+li:nth-child(5)+li:nth-child(6){
+    width: 110px;
+}
+.allnav li:nth-child(3):hover  a {
+    background-position: -440px -100px;
+}
+/*第四个banner栏的动作*/
+.allnav li:nth-child(4):hover  a{
+    background-position: -660px -100px;
+    position: relative;
+    margin-left: -80px;
+    box-shadow: 0 0 2px 2px white;
+}
+.allnav li:nth-child(4):hover{
+    overflow: visible;
+    transform: rotate(-360deg);
+}
+/*第五个banner栏的动作*/
+.allnav li:nth-child(5):hover  a{
+    background-position: -880px -100px;
+    margin-left: -80px;
+    box-shadow: 0 0 2px 2px white;
+    transform: scale(20 20);
+}
+.allnav li:nth-child(5):hover{
+    overflow: visible;
+
+}
+/*第六个banner栏的动作*/
+.allnav li:nth-child(6):hover  a{
+    background-position: -1100px -100px;
+    margin-left: -80px;
+    box-shadow: 0 0 2px 2px white;
+}
+.allnav li:nth-child(6):hover{
+    overflow: visible;
+}
+
+/*中间的广告栏*/
+.ad{
+    box-sizing: border-box;
+    display: block;
+    width: 100%;
+    height: 70px;
+    background: url("../img/2.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    margin-bottom: 10px;
+}
+
+/*中间的正文*/
+.article1{
+    box-sizing: border-box;
+    overflow: hidden;
+    width: 100%;
+    /*background: url("../img/4.png");*/
+    background: linear-gradient(135deg,#2a2c31,black);
+    background-repeat: repeat;
+    margin-bottom: 35px;
+}
+/*正文标题*/
+.article-header{
+    box-sizing: border-box;
+    overflow: hidden;
+    width: 760px;
+    margin: auto;
+    height: 123px;
+    border-bottom: 1px solid #65707f;
+    padding: 34px 0 34px 0px;
+}
+.article-header i{
+    display: block;
+    box-sizing: border-box;
+    width: 80px;
+    height: 86px;
+    background: url("../img/3.png");
+    float: left;
+    background-repeat: no-repeat;
+    margin-left: 40px;
+    transition: all linear 0.5s;
+}
+.article-header h2{
+    color: #65707f;
+    font-size: 24px;
+    float: right;
+    width: 640px;
+    transition: all linear 0.5s;
+}
+.article-header:hover h2{
+    text-shadow: 0 0 10px white;
+}
+.article-header:hover i{
+    /*transform: translate(0,20px);*/
+    margin: 0 -60px;
+}
+/*正文内容*/
+.article1 p{
+    font-size: 16px;
+    color: #9196a4;
+    padding: 30px 40px 0 40px;
+    line-height: 30px;
+    word-spacing: 3px;
+    word-break: break-all;
+}
+.article1-small{
+    display: block;
+    font-size: 14px;
+    color: #9196a4;
+    padding: 30px 40px 0 40px;
+    line-height: 30px;
+    word-spacing: 8px;
+}
+.article1-footer{
+    display: block;
+    font-size: 12px;
+    color: #9196a4;
+    padding: 30px 40px 0 40px;
+    line-height: 30px;
+    word-spacing: 8px;
+    float: right;
+}
+.article1-img1{
+    float: right;
+    border: 5px solid transparent;
+    margin-left: 30px;
+    transition: all linear 0.5s;
+}
+.article1-img1:hover{
+    border: 5px solid black;
+    box-shadow: 0 0 5px 5px white;
+}
+.article1-img2{
+    float: left;
+    border: 5px solid transparent;
+    margin-right: 30px;
+    transition: all linear 0.5s;
+}
+.article1-img2:hover{
+    transform: rotate(-20deg);
+    border: 5px solid black;
+    box-shadow: 0 0 5px 5px white;
+}
+
+/*中间的脚部*/
+.allfooter{
+    box-sizing: border-box;
+    width: 100%;
+    height: 240px;
+    background: url("../img/5.png");
+
+}
+/*脚部的链接栏*/
+.allfooter-left{
+    box-sizing: border-box;
+    width:33.33%;
+    height: 170px;
+    float: left;
+    list-style: none;
+}
+.allfooter-left li{
+    box-sizing: border-box;
+    height: 30px;
+    padding-left: 65px;
+    padding-top: 15px;
+}
+.allfooter-left li:nth-child(n+2){
+    list-style-image: url("../img/6.png");
+    list-style-position: inside;
+}
+.allfooter-left span{
+    color: black;
+    font-size: 18px;
+}
+.allfooter-left a{
+    text-decoration: none;
+    color: #5b6064;
+    font-size: 14px;
+    transition: all linear 0.1s;
+}
+.allfooter-left a:hover{
+    color: black;
+    text-shadow:0 0 5px white;
+}
+.allfooter-left a:active{
+    font-size: 16px;
+    color: white;
+}
+
+
+
+/*脚部的地址栏*/
+.allfooter-bottom
+{
+    box-sizing: border-box;
+    width: 80%;
+    margin: 0 10%;
+    display: block;
+    height: 45px;
+    float: left;
+    background-color: black;
+    text-align: center;
+    line-height: 45px;
+}
+ .allfooter-bottom small{
+    color: white;
+ }
